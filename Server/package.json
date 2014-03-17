@@ -1,0 +1,9 @@
+{
+    "name": "TradeOMS-Marketing",
+    "description": "The TradeOMS Marketing Web Site",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+    "express": "3.4.8"
+    }
+}
