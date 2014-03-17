@@ -1,0 +1,116 @@
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>What do I need to get started?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        To get started you need a Windows PC with Microsoft Excel installed and a brokerage account.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>How are orders executed?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Orders are executed through a FIX engine hosted by EZX, Inc.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>How do I manage trades in Excel?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Typically, a trade is contained in a single row in Excel. Some of the fields (e.g. symbol/side/price/quantity/enabled) contain user input. Other fields (e.g. order status, shares filled, shares outstanding) contain feedback from the trading engine.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>How do I know when an order is placed, partially filled, filled, rejected or cancelled? </i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Order response details are displayed in Excel and are also recorded in a log file on your computer.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>How do I set order parameters (symbol/side/price/quantity)?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Order parameters are set in your Excel spreadsheet and automatically propagate to the trading engine. For example, if the value in the price cell changes, either manually or by a formula updating, the trade engine will cancel the existing order and place a new one.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>How do I send or cancel orders?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Enter "0" in the "enabled" cell in a row containing a trade to cancel an order. Enter "1" in the "enabled" cell to send an order. The value in the "enabled" cell can be based on a formula.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>How do I set a limit for the total number of shares to buy/sell?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Enter the maximum number of shares to buy/sell in the "share cap" cell.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>What happens to my orders if Excel crashes?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        If Excel crashes, restart Excel and the trading engine will re-sync with the EZX FIX engine, providing up to date information regarding order statuses for all trades.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>Can I send orders to multiple brokers?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Each trade row has a field where you can specify the executing broker. You can configure as many executing brokers as you want.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>Can I cancel/replace orders after a specific period of time? </i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Yes, enter the number of seconds to wait before cancelling and replacing an outstanding order in the "" field.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>Can I randomize the order quantity?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        Yes, enter the max number of shares by which to reduce/increase the order quantity in the "Rand" field.
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row col-lg-8 col-md-offset-1">
+        <strong><i>How do I get support for TradeOMS?</i></strong>
+    </div>
+    <div class="row col-lg-8 col-md-offset-1">
+        We are committed to our customer's success. Support is given via email and over the phone.
+    </div>
+</div>
+
+
+
+
+
+
+
+

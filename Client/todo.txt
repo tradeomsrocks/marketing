@@ -1,0 +1,6 @@
+
+Test on iPad safari/chrome, droid browser/chrome, iPhone safari, mac safari/chrome, windows chrome/firefox/ie 9+
+
+Hook up email - need server from rich?
+
+
