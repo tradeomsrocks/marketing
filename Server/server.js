@@ -5,20 +5,9 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 
 var port = 3000;
-var releaseMode = process.argv[2] || 'DEV';
+var releaseMode = process.argv[2] || 'PROD';
 var clientRootDir = __dirname.replace(/\\/g, '/') + '/../Client/';
 var staticRootDir = clientRootDir + 'app/';
-
-var deployClient = function(){
-    exec('node ' + clientRootDir + 'tools/GenerateDeployments.js', function(error){
-        if(error){
-            console.log('!ERROR! Could not deploy client: ' + error);
-        }
-        else {
-            console.log('Deployed client');
-        }
-    });
-};
 
 var app = express();
 var homeHtml;
@@ -29,11 +18,25 @@ app.use(express.static(staticRootDir));
 // facilitate body parsing (for emails)
 app.use(express.bodyParser());
 
+
+var deployClient = function(){
+    exec('node ' + clientRootDir + 'tools/GenerateDeployments.js', function(error){
+        if(error){
+            console.log('!ERROR! Could not deploy client: ' + error);
+        }
+        else {
+            homeHtml = fs.readFileSync(staticRootDir + 'home.html', 'utf-8');
+            console.log('Deployed client');
+        }
+    });
+};
+
+deployClient();
+
 // Empty root serves up home page
 app.get('/', function(req, res){
     if(!homeHtml || releaseMode === 'DEV'){
         deployClient();
-        homeHtml = fs.readFileSync(staticRootDir + 'home.html', 'utf-8');
     }
 
     res.writeHeader(200, {"Content-Type": "text/html"});

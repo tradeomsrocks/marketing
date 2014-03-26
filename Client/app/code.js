@@ -1,9 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-// Unfortunately this is misbehaving right now
-//require('../lib/jquery/jquery.js'); 
-//require('../lib/underscore/Underscore.js');
-//require('../lib/backbone/Backbone.js');
-
 require('./util/Utils.js');
 require('./routers/MainRouter.js');
 require('./domain/Session.js');
@@ -12,15 +7,16 @@ require('./services/AnalyticsService.js');
 
 $().ready(function () {
 
+    // Kojak stuff
+//    kConfig.setEnableNetWatcher(true)
+//    kConfig.setIncludedPakages(['TradeOMS']);
+//    kInst.instrument();
 
     TradeOMS.util.initializeSession();
-//    TradeOMS.util.loadEnums();
     TradeOMS.util.injectNamespaces();
     TradeOMS.util.injectTemplates();
     TradeOMS.util.initializeServices();
     TradeOMS.util.initializeRouters();
-
-//    TradeOMS.util.loadInitialData();
 
     // Start the application.  This will trigger the router function that matches the current # in the url
     Backbone.history.start();
