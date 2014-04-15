@@ -11,8 +11,9 @@ GetNamespace('TradeOMS.views.main').MainLayout = TradeOMS.views.BaseView.extend(
     },
 
     render: function(){
-        this.$el.append(this._topMenu.render().el);
         this.$el.append(this.template());
+        this.$('#menu').append(this._topMenu.render().el);
+
         return this;
     },
 

@@ -8,17 +8,17 @@
     margin-top: 40px;
 }
 
-.speech-bubble:after {
-    content: "";
-    border: solid 10px transparent; /* set all borders to 10 pixels width */
-    border-top-color: #EEEEEE; /* the callout */
-    border-bottom: 0; /* we do not need the bottom border in this case */
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    display: block;
-    position: relative;
-    bottom: -20px; /* border-width of the :after element + padding of the root element */
-    left: 400px;
-    margin: auto;
-}
+/*.speech-bubble:after {*/
+    /*content: "";*/
+    /*border: solid 10px transparent; *//* set all borders to 10 pixels width */
+    /*border-top-color: #EEEEEE; *//* the callout */
+    /*border-bottom: 0; *//* we do not need the bottom border in this case */
+    /*width: 0;*/
+    /*height: 0;*/
+    /*overflow: hidden;*/
+    /*display: block;*/
+    /*position: relative;*/
+    /*bottom: -20px; *//* border-width of the :after element + padding of the root element */
+    /*left: 400px;*/
+    /*margin: auto;*/
+/*}*/
