@@ -429,7 +429,7 @@ GetNamespace('TradeOMS.views.main').Contact = TradeOMS.views.BaseView.extend({
             return false;
         }
 
-        var emailOptions = {fromAddress: this.$('#fromEmail').val(), message: this.$('#message').val()};
+        var emailOptions = {fromAddress: this.$('[name=fromEmail]').val(), message: this.$('[name=message]').val()};
 
         TradeOMS.services.emailService.sendEmail(emailOptions).done(function(){
             this.$('.sendEmail').hide();

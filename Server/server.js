@@ -3,6 +3,7 @@
 var express = require('express');
 var exec = require('child_process').exec;
 var fs = require('fs');
+var dateFormat = require('dateformat');
 
 var port = 3000;
 var releaseMode = process.argv[2] || 'PROD';
@@ -46,6 +47,19 @@ app.get('/', function(req, res){
 
 // handle emails
 app.post('/sendEmail', function(req, res){
+    try {
+        // write the email to a file as a backup just in case
+        var fileName = 'emails/' + dateFormat(new Date(), 'yyyy-mm-dd-h_MM_ss') + '.txt';
+        var backup = 'Email: ' + req.body.fromAddress + '\r\nMessage: ' + req.body.message;
+        fs.writeFile(fileName, backup, function (err) {
+            if (err) throw err;
+        });
+    }
+    catch(e) {
+        console.error('!!!!CRITICAL ERROR, could not save an email to a file!!! ', req && req.body && req.body.fromAddress, req && req.body && req.body.message);
+    }
+
+    // Actually send the email now
     console.log('sending email: ', req.body.fromAddress, req.body.message);
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write('{}');
