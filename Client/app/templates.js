@@ -19,7 +19,7 @@ return __p;
 };GetNamespace('TradeOMS.templates.main').ScreenShots=function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<br><br>ExcelTrade in action<hr>';
+__p+='<br><br>ExcelTrade in action<hr><strong>Basic configuration options:</strong><br><br><img src="img/Settings.jpg"/><br><br><br><strong>Basic trade example:</strong><br><br><img src="img/Trades.jpg"/>';
 }
 return __p;
 };GetNamespace('TradeOMS.templates.main').MainLayout=function(obj){
@@ -37,7 +37,7 @@ return __p;
 };GetNamespace('TradeOMS.templates.main').Contact=function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<br><br><div class="row col-lg-6 col-md-offset-1 lead" >    Contact us with any questions regarding TradeOMS Excel Trade and we\'ll get back to you asap.</div><br><div class="row col-sm-8 col-sm-offset-1 sendEmail" style="display:block">    <form role="form" id="emailForm">        <div class="form-group">            <label for="cfromEmail">My Email address *</label>            <input type="email" class="form-control" id="cfromEmail" name="fromEmail" placeholder="My email address">        </div>        <div class="form-group">            <label for="cmessage">Message *</label>            <textarea class="form-control" id="cmessage" name="message" rows="5"></textarea>        </div>        <button type="submit" class="submit btn btn-primary btn-lg active" id="submit">Submit</button>    </form></div><div class="row col-sm-8 col-sm-offset-1 sentEmail" style="display:none">    <p class="lead">Thanks for the email.</p>    <p class="lead">We\'ll get back to you asap.</p></div>';
+__p+='<br><br><div class="row col-sm-8 col-sm-offset-1 lead" >    Contact us with any questions regarding TradeOMS Excel Trade and we\'ll get back to you asap.</div><br><br><div class="row col-sm-8 col-sm-offset-1 sendEmail" style="display:block">    <form role="form" id="emailForm">        <div class="form-group">            <label for="cfromEmail">My Email address *</label>            <input type="email" class="form-control" id="cfromEmail" name="fromEmail" placeholder="My email address">        </div>        <div class="form-group">            <label for="cmessage">Message *</label>            <textarea class="form-control" id="cmessage" name="message" rows="5"></textarea>        </div>        <button type="submit" class="submit btn btn-primary btn-lg active" id="submit">Submit</button>    </form></div><div class="row col-sm-8 col-sm-offset-1 sentEmail" style="display:none">    <p class="lead">Thanks for the email.</p>    <p class="lead">We\'ll get back to you asap.</p></div>';
 }
 return __p;
 };GetNamespace('TradeOMS.templates.main').About=function(obj){
