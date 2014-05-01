@@ -70,6 +70,7 @@ GetNamespace('TradeOMS.services').EmailService = Backbone.Model.extend({
     sendEmail: function(emailOptions){
         var sendEmailModel = new Backbone.Model(emailOptions);
         sendEmailModel.urlRoot = '/sendEmail/';
+        TradeOMS.services.analyticsService.push(['_trackPageview', '#sentAnEmail']);
         return sendEmailModel.save();
     }
 

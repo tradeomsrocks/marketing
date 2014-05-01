@@ -6,7 +6,7 @@ var fs = require('fs');
 var dateFormat = require('dateformat');
 var nodemailer = require('nodemailer');
 
-var port = 3000;
+var port = 80;
 var releaseMode = process.argv[2] || 'PROD';
 var clientRootDir = __dirname.replace(/\\/g, '/') + '/../Client/';
 var staticRootDir = clientRootDir + 'app/';
@@ -76,7 +76,6 @@ app.post('/sendEmail', function(req, res){
     console.log('sending email: ', req.body.fromAddress, req.body.message);
 
     try {
-
         var mailOptions = {
             from: 'Trade OMS Sales <sales@tradeoms.com>',
             to: 'rich@wifunds.com, bartwood@gmail.com', // list of receivers
@@ -94,7 +93,7 @@ app.post('/sendEmail', function(req, res){
         });
     }
     catch(e){
-        
+        console.log('!!!!!CRITICAL ERROR, could not send an email.', req && req.body && req.body.fromAddress, req && req.body && req.body.message);
     }
 
     res.writeHead(200, {'Content-Type': 'text/html'});
