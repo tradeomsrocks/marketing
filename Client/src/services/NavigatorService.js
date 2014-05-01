@@ -56,5 +56,9 @@ GetNamespace('TradeOMS.services').NavigatorService = Backbone.Model.extend({
     pushHistoryFragment: function(urlFragment){
         Backbone.history.navigate(urlFragment);
         TradeOMS.services.analyticsService.push(['_trackPageview', '#' + urlFragment]);
+    },
+
+    getPreviousAction: function(){
+        return this._previousAction;
     }
 });

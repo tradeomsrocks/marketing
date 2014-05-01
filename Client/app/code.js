@@ -113,7 +113,7 @@ GetNamespace('TradeOMS.services').MainService = Backbone.Model.extend({
     onBeforeNavigate: function(action, context){
         this._initializeMainLayout();
 
-        if(this._activeView){
+        if(action !== TradeOMS.services.navigatorService.getPreviousAction() && this._activeView){
             this._activeView.remove();
         }
     },
@@ -194,6 +194,10 @@ GetNamespace('TradeOMS.services').NavigatorService = Backbone.Model.extend({
     pushHistoryFragment: function(urlFragment){
         Backbone.history.navigate(urlFragment);
         TradeOMS.services.analyticsService.push(['_trackPageview', '#' + urlFragment]);
+    },
+
+    getPreviousAction: function(){
+        return this._previousAction;
     }
 });
 

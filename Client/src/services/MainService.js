@@ -19,7 +19,7 @@ GetNamespace('TradeOMS.services').MainService = Backbone.Model.extend({
     onBeforeNavigate: function(action, context){
         this._initializeMainLayout();
 
-        if(this._activeView){
+        if(action !== TradeOMS.services.navigatorService.getPreviousAction() && this._activeView){
             this._activeView.remove();
         }
     },
